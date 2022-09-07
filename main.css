@@ -5,10 +5,15 @@
 body {
   background-color: #F2EAE2;
   min-height: 100vh;  
+  min-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+
 .main-box {
-  margin: 1.5rem 1rem auto 1rem;
+  margin: 1rem;
   border-radius: 10px;
   background-color: white;
   display: flex;
@@ -16,17 +21,51 @@ body {
   overflow: hidden;
 }
 
+@media (min-width: 40rem) {
+  .main-box {
+    width: 37.5rem;
+    height: 28.125rem;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
 .img-background {
   width: 100%;
-  height: 240px;
+  height: 15rem;
   background: url('./images/image-product-mobile.jpg');
   background-size: cover;
 }
+
+@media (min-width: 40rem) {
+  .img-background {
+    height: 100%;
+    width: 18.75rem;
+    background: url('./images/image-product-desktop.jpg');
+    background-size: contain;
+  }
+}
+
 .content {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  height: 23rem;
 }
+
+@media (min-width: 40rem) {
+  .content__wrap {
+    display: flex;
+    height: 100%;
+    width: 50%;
+  }
+  .content {
+    justify-content: space-between;
+    align-self: center;
+  }
+}
+
 .small-title {
   font-family: 'Montserrat';
   font-style: normal;
@@ -57,6 +96,9 @@ body {
 
 .price {
   display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  width: 60%;
 }
 
 .price-1 {
@@ -74,6 +116,7 @@ body {
   font-weight: 500;
   font-size: 0.95rem;
   line-height: 1.5rem;
+  margin: 1rem;
   text-decoration-line: line-through;
   color: #6C7289;
 }
@@ -81,13 +124,14 @@ body {
 .content button {
   background: #3D8168;
   border-radius: 8px;
-  width: 295px;
-  height: 48px;
   border: none;
+  padding: 0.75rem;
+  display: flex;
+  justify-content: center;
 }
 
 .icon-cart {
-  
+  margin: 0.25rem;
 }
 
 .button-text {
@@ -97,4 +141,5 @@ body {
   font-size: 0.95rem;
   line-height: 1rem;
   color: #FFFFFF;
+  margin: 0.25rem;
 }
